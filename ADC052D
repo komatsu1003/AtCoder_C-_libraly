@@ -1,0 +1,42 @@
+string S;
+bool ARC = false;
+bool AGC = false;
+bool AHC = false;
+bool ABC = false;
+for (int i = 0; i < 3; i++)
+{
+    cin >> S;
+    if (S == "ARC")
+    {
+        ARC = true;
+    }
+    if (S == "ABC")
+    {
+        ABC = true;
+    }
+    if (S == "AHC")
+    {
+        AHC = true;
+    }
+    if (S == "AGC")
+    {
+        AGC = true;
+    }
+}
+if (
+    AHC == false)
+{
+    cout << "AHC" << endl;
+}
+if (AGC == false)
+{
+    cout << "AGC" << endl;
+}
+if (ABC == false)
+{
+    cout << "ABC" << endl;
+}
+if (ARC == false)
+{
+    cout << "ARC" << endl;
+}
