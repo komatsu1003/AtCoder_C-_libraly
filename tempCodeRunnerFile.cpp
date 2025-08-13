@@ -1,0 +1,1 @@
+reverse(sortedA.begin(), sortedA.end());

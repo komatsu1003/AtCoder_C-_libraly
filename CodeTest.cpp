@@ -3,27 +3,33 @@
 
 int main()
 {
-    int N;
-    cin >> N;
-    vector<string> S(N, string(N, '#'));
-    rep(i, 0, N)
+    int N, M;
+    cin >> N >> M;
+    vector<int> A(N);
+    int ans = 0;
+    rep(i, 0, N) cin >> A[i];
+    REP(cnt, 0, N)
     {
-        rep(j, 0, N)
+        set<int> st;
+        rep(i, 0, N - cnt)
         {
-            int layer = min({i, j, N - i - 1, N - j - 1});
-            if (layer % 2 == 0)
+            st.insert(A[i]);
+        }
+        bool ok = true;
+        REP(x, 1, M)
+        {
+            if (st.find(x) == st.end())
             {
-                S[i][j] = '#';
-            }
-            else
-            {
-                S[i][j] = '.';
+                ok = false;
+                break;
             }
         }
-    }
-    for (const auto &c : S)
-    {
-        cout << c << el;
+        if (!ok)
+        {
+            ans = cnt;
+            cout << ans;
+            return 0;
+        }
     }
 }
 #else
