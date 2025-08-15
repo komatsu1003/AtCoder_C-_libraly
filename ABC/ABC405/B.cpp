@@ -1,8 +1,34 @@
 #if !__INCLUDE_LEVEL__
 #include __FILE__
-
+// この問題は、繰り返し処理が課題点。特にcntで末尾の要素を何個削除したかを表し、それに合わせて後のfor文で「Aの配列にどれくらい残っているか」を見るためのN - cntまでかけたら解ける。
 int main()
 {
+    int N, M;
+    cin >> N >> M;
+    vector<int> A(N);
+    rep(i, 0, N) cin >> A[i];
+    REP(cnt, 0, N)
+    {
+        set<int> st;
+        rep(i, 0, N - cnt)
+        {
+            st.insert(A[i]);
+        }
+        bool ok = true;
+        REP(x, 1, M)
+        {
+            if (st.find(x) == st.end())
+            {
+                ok = false;
+                break;
+            }
+        }
+        if (!ok)
+        {
+            cout << cnt;
+            return 0;
+        }
+    }
 }
 #else
 #include <bits/stdc++.h>

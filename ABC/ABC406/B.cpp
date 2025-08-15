@@ -3,6 +3,27 @@
 
 int main()
 {
+    int N, K;
+    cin >> N >> K;
+    long long A, cal = 1, ovr = 1;
+    rep(i, 0, K)
+    {
+        ovr *= 10;
+    }
+    ovr--;
+    rep(i, 0, N)
+    {
+        cin >> A;
+        if (cal > (ovr / A))
+        {
+            cal = 1;
+        }
+        else
+        {
+            cal *= A;
+        }
+    }
+    cout << cal;
 }
 #else
 #include <bits/stdc++.h>
